@@ -3,20 +3,26 @@
 This experiment followed strict patterns to ensure that it would not affect the servers of each of the tested solutions. No real data was used in the tests. Each solution got an account created and fake data inserted into it.
 
 
-\section{Requirments}
+\subsection{Testing environment}
 \paragraph{}
-In this research we will be using five servers with the following specifications:
+The research will be conducted within a client-server environment.
 
+\subsubsection{Servers}
+\paragraph{}
+In this research we will be using five servers with the following specifications:\\~\\
+\textbf{Physical server}
 \begin{itemize}
 	\item Intel Xeon processor
 	\item 8GB ram
 	\item SSD + HDD for storage
 \end{itemize}
 
-\paragraph{}
-For the virtual server we will be using Xen 4.8.2 as hypervisor to implements the VMs. For the four physical servers we will be using each server to setup a separate functionality. Additional tools will be used, as well multiple logging and bench marking tools that allow us to keep a detailed log on the resource consumption and performance measurement.
+ For the four physical servers we will be using each server to setup a separate functionality. Additional tools will be used, as well multiple logging and bench marking tools that allow us to keep a detailed log on the resource consumption and performance measurement. The fifth physical server is used for virtualization.
 
-\subsection{Testing environment}
+\textbf{virtual server}
+\paragraph{}
+For the virtual server we will be using Xen 4.8.2 as hypervisor to implements the VMs. On top of the hypervisor there is a Dom0
+
 \paragraph{}
 To test the solutions the following tools were used to setup a testing environment:
 \begin{itemize}
