@@ -4,3 +4,52 @@
 %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%
+%%  Table used to compare
+%%%%%%%%%
+
+\paragraph{}
+Due to the cheer number of Password manager solutions we decided to test 4 solutions. Of these solutions 3 where chosen from the most "Popular" ones\cite{bestPasswordManagers}. The last one was chosen due to it being dutch\cite{Vaulteq}.
+\begin{table}[H]
+    \newcolumntype{s}{>{\columncolor[HTML]{AAACED}} p{1.8cm}}
+    \centering
+    \begin{tabular}{|s|c|c|c|c|}
+        \hline
+        \rowcolor[HTML]{AAACED} Password Managers: & Lastpass & Dashlane & Vaulteq & Keepass \\
+        \hline
+        Online & $\times$ & $\times$ & $\times$ &  \\
+        \hline
+        Offline & $\times$ & $\times$ & $\times$ & $\times$ \\
+        \hline
+        Windows & $\times$ & $\times$ & $\times$ & $\times$ \\
+        \hline
+        MAC & $\times$ & $\times$ & $\times$ & $\times$ \\
+        \hline
+        Linux & $\times$ &  & $\times$ & $\times$ \\
+        \hline
+        IOS & $\times$ & $\times$ & $\times$ & * \\
+        \hline
+        Android & $\times$ & $\times$ & $\times$ & * \\
+        \hline
+        \multicolumn{5}{|c|}{*Keepass for IOS/android only possible with forks}\\
+        \hline
+    \end{tabular}
+    \caption{Password manager tested solutions}
+    \label{tab:Scope_Password_Managers}
+\end{table}
+
+%%
+%%  To include an image
+%%%%%%%%%
+
+\subsubsection{Basic Input Validation}
+\paragraph{}
+We first decided to test the Input validation since its the core functionality of the program. As most programs it gets some user input, processes it and outputs the result as seen bellow on figure \ref{fig:PM_SimpleFunctionality}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6cm]{Figures/PasswordManagerInputOutputSimple.png}
+    \caption{Password manager's abstracted basic functionality}
+    \label{fig:PM_SimpleFunctionality}
+\end{figure}
+\paragraph{}
+In a password manager it is not different. For this test we imputed strings of varied lengths and with has many symbols as possible into all of the fields. Lastly, we tried to crash the program by imputing a very long string pattern of 20 thousand characters.

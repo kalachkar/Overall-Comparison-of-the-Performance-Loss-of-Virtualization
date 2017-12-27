@@ -48,51 +48,44 @@ To test the solutions the following tools were used to setup a testing environme
     \end{itemize}
 \end{itemize}
 
+\subsection{Tool}
 
-\paragraph{}
-Due to the cheer number of Password manager solutions we decided to test 4 solutions. Of these solutions 3 where chosen from the most "Popular" ones\cite{bestPasswordManagers}. The last one was chosen due to it being dutch\cite{Vaulteq}.
-\begin{table}[H]
-    \newcolumntype{s}{>{\columncolor[HTML]{AAACED}} p{1.8cm}}
-    \centering
-    \begin{tabular}{|s|c|c|c|c|}
-        \hline
-        \rowcolor[HTML]{AAACED} Password Managers: & Lastpass & Dashlane & Vaulteq & Keepass \\
-        \hline
-        Online & $\times$ & $\times$ & $\times$ &  \\
-        \hline
-        Offline & $\times$ & $\times$ & $\times$ & $\times$ \\
-        \hline
-        Windows & $\times$ & $\times$ & $\times$ & $\times$ \\
-        \hline
-        MAC & $\times$ & $\times$ & $\times$ & $\times$ \\
-        \hline
-        Linux & $\times$ &  & $\times$ & $\times$ \\
-        \hline
-        IOS & $\times$ & $\times$ & $\times$ & * \\
-        \hline
-        Android & $\times$ & $\times$ & $\times$ & * \\
-        \hline
-        \multicolumn{5}{|c|}{*Keepass for IOS/android only possible with forks}\\
-        \hline
-    \end{tabular}
-    \caption{Password manager tested solutions}
-    \label{tab:Scope_Password_Managers}
-\end{table}
+%%tools we use
+
+
 \clearpage
 \subsection{Method}
 \paragraph{}
 For this project we decided to follow a methodology that starts from basic tests to increasingly complex ones. The steps we followed were:
 \begin{itemize}
     \item ..
+    \item ..
+    \item ..
 \end{itemize}
-\subsubsection{Basic Input Validation}
+\subsubsection{Paessler Webserver Stress Tool}
 \paragraph{}
-We first decided to test the Input validation since its the core functionality of the program. As most programs it gets some user input, processes it and outputs the result as seen bellow on figure \ref{fig:PM_SimpleFunctionality}.
+We first decided to do \ref{fig:QQ3}.
+
+NOTE: Below should be an image with the test 
+%%                           > WEB 1 \
+%%    Stress tool to Proxy  <         > Database 
+%%                           > WEB 2 /
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=6cm]{Figures/PasswordManagerInputOutputSimple.png}
-    \caption{Password manager's abstracted basic functionality}
-    \label{fig:PM_SimpleFunctionality}
+    \includegraphics[width=6cm]{Figures/Screenshot.png}
+    \caption{Screenshot}
+    \label{fig:QQ3}
 \end{figure}
 \paragraph{}
 In a password manager it is not different. For this test we imputed strings of varied lengths and with has many symbols as possible into all of the fields. Lastly, we tried to crash the program by imputing a very long string pattern of 20 thousand characters.
+
+\subsubsection{Apache Benchmark}
+
+NOTE: Below should be an image with the test 
+%%                  > WEB 1 \
+%%    AB to Proxy  <         > Database 
+%%                  > WEB 2 /
+
+NOTE: Below should be an image with the test 
+%%      AB to      > WEB 1 
