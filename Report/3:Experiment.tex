@@ -54,12 +54,33 @@ To test the solutions the following tools were used to setup a testing environme
 
 
 \clearpage
-\subsection{Method}
+\subsection{Methodology}
 \paragraph{}
-For this project we decided to follow a methodology that starts from basic tests to increasingly complex ones. The steps we followed were:
+In this project we followed a methodology that starts from basic tests to increasingly complex ones on both virtual and physical servers. The steps we followed were:
 \begin{itemize}
-    \item ..
-    \item ..
+    \item \textbf{Basic setup tests:}
+ In the basic setup tests we used only the Apache HTTP server benchmarking tool to experiment the web server alone by itself without the complete setup as illustrated in the \textbf{\textit{figure 1}}. 
+ We targeted only the static web page of our osCommerce store.
+ \begin{figure}[H]
+    \centering
+    \includegraphics[width=6cm]{Pictures/simple.PNG}
+    \caption{Basic Setup Test Methodology}
+    \label{fig:QQ3}
+\end{figure}
+   
+    
+    
+    \item \textbf{Full setup tests:}
+ For the complete setup test we used both the Apache HTTP server benchmarking tool and Paessler webserver Stress tool to experiment the complete setup environment which includes proxy, web, and database servers as shown in \textbf{\textit{figure 2}}. 
+ We targeted the proxy server which acts as load balancer between our two webservers. And these two webservers interact directly with the database server. Which leads to a complete setup tests.   
+ \begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{Pictures/complex.PNG}
+    \caption{Full Setup Test Methodology}
+    \label{fig:QQ3}
+\end{figure}
+
+
     \item ..
 \end{itemize}
 \subsubsection{Paessler Webserver Stress Tool}
