@@ -1,2 +1,45 @@
 \section{Discussion}
 \paragraph{}
+
+
+%% here should we talk about the result %%%
+
+
+
+
+
+
+
+
+
+%% Alexander: Short note to not forget %%
+
+
+\subsubsection{discus result}
+%[23:47, 28-12-2017] +31 6 : This is the picture from the presentation..... the yellow one in the right down corner
+%%- Hardware: ~ 10 ms
+%%- VM (2cpu/1g): ~ 30 ms
+%%- VM (8cpu/4gb): ~ 15 ms
+%%[23:52, 28-12-2017] +31 6 : Result is: 5.000 > 20.000 ms ( + 1,5 second )  if migration full setup to virutal
+%%Result is:  10ms > 15 ms ( + 5ms )   ... for a static website
+%%[2chkar: So we fixed the problem
+%%[r: (((( you fixed the problem ))))
+%% Conclusion:   5 ms delay of virtualisation ( 33 % ) ... if you move the full setup... then %%it becomes 1,5 second slower
+%% : I think it is because the setup is not made for virualisation on ONE hypervisor
+%%: In the first situation you have 4 servers ( 16cpu / 16 gb ) * 4
+%%: In the virual you have 1 server ( 16 cpu / 16gb ) * 1
+%% However you have a lot of overhead it costs 1,5 second .
+
+[23:47, 28-12-2017] +31 6 : This is the picture from the presentation..... the yellow one in the right down corner\\
+Hardware: ~ 10 ms\\
+VM (2cpu/1g): ~ 30 ms\\
+VM (8cpu/4gb): ~ 15 ms\\
+23:52, 28-12-2017] +31 6 : Result is: 5.000 > 20.000 ms ( + 1,5 second )  if migration full setup to virutal\\
+Result is:  10ms > 15 ms ( + 5ms )   ... for a static website\\
+2chkar: So we fixed the problem\\\
+r: (((( you fixed the problem ))))\\
+Conclusion:   5 ms delay of virtualisation ( 33 \% ) ... if you move the full setup... then %%it becomes 1,5 second slower
+I think it is because the setup is not made for virualisation on ONE hypervisor\\
+In the first situation you have 4 servers ( 16cpu / 16 gb ) * 4\\
+In the virual you have 1 server ( 16 cpu / 16gb ) * 1\\
+However you have a lot of overhead it costs 1,5 second .\\
