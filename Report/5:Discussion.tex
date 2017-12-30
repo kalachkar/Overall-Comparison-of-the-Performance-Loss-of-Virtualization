@@ -1,42 +1,16 @@
 \section{Discussion}
 \paragraph{}
+During the experiments we saw large differences between the physical and virtual setup. The largest difference is seen on the full-setup.
 
+\paragraph{}
+The hardware setup is stable and is functioning quite normal with a responce time of the catalog of 5000ms, but the virtual setup is much more slower with a response of 20.000ms. That is 3 times slower and unacceptable. This might be the effect of distribution transparency.
 
-%% here should we talk about the result %%%
+\paragraph{}
+After the experiment with the full application setup we also preformed a test with a webserver only. In this experment with more simple and limited setup we noticed a difference of 5ms between the hardware and VM. In \textbf{figure \ref{fig:resA2hw}}, we see the hardware has an average of 10ms and in \textbf{figure \ref{fig:resA3vm2}} the pure VM has an average delay of 15ms under the same circumstances with the same experiment. We consider that the pure loss of virtualization.
 
+\paragraph{}
+In the last test we tried to minimize the difference by optimizing and doubling the CPU and memory assigned to the VM. There was almost no difference visible in performance.
 
-
-
-
-
-%% Alexander: Short note to not forget %%
-
-
-\subsubsection{discus result}
-%[23:47, 28-12-2017] +31 6 : This is the picture from the presentation..... the yellow one in the right down corner
-%%- Hardware: ~ 10 ms
-%%- VM (2cpu/1g): ~ 30 ms
-%%- VM (8cpu/4gb): ~ 15 ms
-%%[23:52, 28-12-2017] +31 6 : Result is: 5.000 > 20.000 ms ( + 1,5 second )  if migration full setup to virutal
-%%Result is:  10ms > 15 ms ( + 5ms )   ... for a static website
-%%[2chkar: So we fixed the problem
-%%[r: (((( you fixed the problem ))))
-%% Conclusion:   5 ms delay of virtualisation ( 33 % ) ... if you move the full setup... then %%it becomes 1,5 second slower
-%% : I think it is because the setup is not made for virualisation on ONE hypervisor
-%%: In the first situation you have 4 servers ( 16cpu / 16 gb ) * 4
-%%: In the virual you have 1 server ( 16 cpu / 16gb ) * 1
-%% However you have a lot of overhead it costs 1,5 second .
-
-[23:47, 28-12-2017] +31 6 : This is the picture from the presentation..... the yellow one in the right down corner\\
-Hardware: ~ 10 ms\\
-VM (2cpu/1g): ~ 30 ms\\
-VM (8cpu/4gb): ~ 15 ms\\
-23:52, 28-12-2017] +31 6 : Result is: 5.000 > 20.000 ms ( + 1,5 second )  if migration full setup to virutal\\
-Result is:  10ms > 15 ms ( + 5ms )   ... for a static website\\
-2chkar: So we fixed the problem\\\
-r: (((( you fixed the problem ))))\\
-Conclusion:   5 ms delay of virtualisation ( 33 \% ) ... if you move the full setup... then %%it becomes 1,5 second slower
-I think it is because the setup is not made for virualisation on ONE hypervisor\\
-In the first situation you have 4 servers ( 16cpu / 16 gb ) * 4\\
-In the virual you have 1 server ( 16 cpu / 16gb ) * 1\\
-However you have a lot of overhead it costs 1,5 second .\\
+\paragraph{}
+We notice that the application performance, in a virtual environment, is strongly affected by the architecture of the application. \par
+The webshop has a stateless design where the session date (e.g. shopping-cart) are stored in the datebase. Session related to an session\_id saved in a cookie at the client-side which reffers to a record in the database.

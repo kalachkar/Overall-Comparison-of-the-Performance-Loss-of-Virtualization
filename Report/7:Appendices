@@ -1,7 +1,6 @@
 \section{Appendices}
 \paragraph{}
 ~
-
 \label{Appendix1}
 \begin{lstlisting}[language=bash,caption=Appendix 1 - template bash code for ab ]
 #!/bin/bash
@@ -45,3 +44,48 @@ set datafile separator '\t'
 plot "abresult_hw_2.tsv" every ::2 using 5 title 'response time' with lines
 ......
 \end{lstlisting}
+\clearpage
+\label{Appendix3}
+\begin{lstlisting}[language=bash,caption=Appendix 3 - Shopping Scenario]
+0,0,URL#
+1,0,Name
+2,0,Click Delay [s]
+3,0,URL                                 
+4,0,POST data (or @filename@)
+5,0,Username $i[username]
+6,0,Password $i[password]
+3,1,http://app.vm.os5.nl/oscommerce/catalog/
+0,2,2
+3,2,http://app.vm.os5.nl/oscommerce/catalog/product_info.php&products_id=$i[item_id][0]
+0,3,3
+3,5,http://app.vm.os5.nl/oscommerce/catalog/product_info.php?action=add_product&products_id=$i[item_id][0]
+0,6,6
+3,8,http://app.vm.os5.nl/oscommerce/catalog/product_info.php?cPath=2_19&products_id=$i[item_id][0]
+0,9,9
+3,11,http://app.vm.os5.nl/oscommerce/catalog/index.php?cPath=2_20
+0,12,12
+3,12,http://app.vm.os5.nl/oscommerce/catalog/product_info.php?cPath=2_20&products_id=$i[item_id][0]
+3,16,http://app.vm.os5.nl/oscommerce/catalog/shopping_cart.php?action=update_product
+4,16,id%5B26%7B3%7D8%5D%5B3%5D=8&cart_quantity%5B%5D=5&cart_quantity%5B%5D=$i[item_aantal][0]&products_id=$i[item_id][0]
+3,18,http://app.vm.os5.nl/oscommerce/catalog/product_info.php&products_id=$i[item_id][1]
+3,21,http://app.vm.os5.nl/oscommerce/catalog/product_info.php&products_id=$i[item_id][1]&action=add_product
+4,21,products_id=4
+3,22,http://app.vm.os5.nl/oscommerce/catalog/shopping_cart.php?products_id=$i[item_id][1]&action=remove_product
+0,23,23
+3,23,http://app.vm.os5.nl/oscommerce/catalog/checkout_shipping.php
+0,24,24
+3,24,http://app.vm.os5.nl/oscommerce/catalog/login.php?action=process
+4,24,formid=$i[card_id]&email_address=testuser@os5.nl&password=test123
+0,25,25
+3,25,http://app.vm.os5.nl/oscommerce/catalog/checkout_shipping.php
+4,25,formid=$i[card_id]&action=process&shipping=flat_flat&comments=I+do+not+really+want+this+%2C+only+test
+0,26,26
+3,26,http://app.vm.os5.nl/oscommerce/catalog/checkout_confirmation.php
+4,26,formid=$i[card_id]&payment=cod&comments=I+do+not+really+want+this+%2C+only+test
+0,27,27
+3,27,http://app.vm.os5.nl/oscommerce/catalog/checkout_process.php
+4,27,comments=I+do+not+really+want+this+%2C+only+test
+0,28,28
+3,28,http://app.vm.os5.nl/oscommerce/catalog/logoff.php
+\end{lstlisting}
+
