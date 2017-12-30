@@ -5,49 +5,21 @@ This experiment followed strict patterns to ensure that it would not affect the 
 
 \subsection{Testing environment}
 \paragraph{}
-The research will be conducted within a client-server environment.
-
-\subsubsection{Servers}
-\paragraph{}
-In this research we will be using five servers with the following specifications:\\~\\
-\textbf{Physical server}
+The research will be conducted within a client-server environment. In this research we will be using five servers with the following specifications:
 \begin{itemize}
 	\item Intel Xeon processor
 	\item 8GB ram
 	\item SSD + HDD for storage
 \end{itemize}
 
+\subsubsection{Physical server}
  We used four physical servers to setup the needed services. Additional tools will be used, as well multiple logging and bench marking tools that allow us to keep a detailed log on the resource consumption and performance measurement. The fifth physical server is used for building the virtual setup.
- 
-\textbf{virtual server}
+
+\subsubsection{Virtual server}
 \paragraph{}
 For the virtual server we will be using Xen 4.8.2 as hypervisor to implements the VMs. On top of the hypervisor there is a Dom0.
-
-\paragraph{}
-To test the solutions the following tools were used to setup a testing environment:
-\begin{itemize}
-    \item Ubuntu 16.04.2
-    \begin{itemize}
-        \item Virtual Box - 5.0.40
-        \begin{itemize}
-            \item Windows 7 and 10 x64 - Fully updated
-            \begin{itemize}
-                \item Process Explorer - 16.21
-                \item Windows 7/10 SDK - 7.1/10.0.15063.400
-                \item Proxifier - 3.31
-            \end{itemize}
-        \end{itemize}
-        \item Burp Suite - 1.7.23
-        \item Apktool - 2.2.2
-        \item Dex2jar - Commit dd9d722
-        \item Jd\_Gui - Commit acd511f
-    \end{itemize}
-    \item Android - 7.1.2
-    \begin{itemize}
-        \item Proxydroid - 2.7.7
-    \end{itemize}
-\end{itemize}
-
+ 
+\subsubsection{Setup overview}
 \begin{figure}[H]
     \centering
     \includegraphics[width=14cm]{Pictures/setup.PNG}
@@ -57,9 +29,7 @@ To test the solutions the following tools were used to setup a testing environme
 
 \textbf{\textit{Figure 3}} above illustrates both the physical and virtual setups environment, in addition to each service that run on which server.
 
-
 \subsection{Tools}
-
 \paragraph{}
 In order to achieve a consistent and precise output for our experiments. We used two different tools run on different operating systems to load and stress our setup. The tools are the following: 
 
@@ -71,7 +41,6 @@ In order to achieve a consistent and precise output for our experiments. We used
 
 \end{itemize}
 
-\clearpage
 \subsection{Methodology}
 \paragraph{}
 In this project we followed a methodology that starts from basic tests to increasingly complex ones on both virtual and physical servers. The steps we followed were:
@@ -85,8 +54,7 @@ In this project we followed a methodology that starts from basic tests to increa
     \caption{Basic Setup Test Methodology}
     \label{fig:QQ3}
 \end{figure}
-   
-    
+
     
     \item \textbf{Full setup tests:}
  For the complete setup test we used both the Apache HTTP server benchmarking tool and Paessler webserver Stress tool to experiment the complete setup environment which includes proxy, web, and database servers as shown in \textbf{\textit{figure 2}}. 
@@ -97,100 +65,44 @@ In this project we followed a methodology that starts from basic tests to increa
     \caption{Full Setup Test Methodology}
     \label{fig:QQ3}
 \end{figure}
-
 \end{itemize}
+\subsection{Additional information}
+For the project we used the fo ..
 
-\subsubsection{Paessler Webserver Stress Tool}
+
+
+\subsubsection{Script}
+Alexander: See apendix 1 and 2 ... tell something about
+
+\subsubsection{Webshop}
+Alexander: as webshop we used osCommerce
+
+%% osCommerce is opensourcesoftware waarmee een onlinewinkel kan worden gestart en onderhouden. Om osCommerce te kunnen gebruiken is een server nodig waarop een webserver, PHP en MySQL zijn geïnstalleerd. Wikipedia %%
+
+%% https://en.wikipedia.org/wiki/OsCommerce %%
+%% https://www.oscommerce.com/ %%
+
+%% Why we used it %%
+
+
+\subsubsection{Naming structure}
 \paragraph{}
-
-\textbf{ALEXANDER write here how we adjust the Paessler tool ( number of users and etc..) also include screenshot about how we customized the URLs and etc}
-
-\subsubsection{Measuring requests \& transferred data}
+For the project we used the following url structure, to prevent mistakes during the measurement\\
 \paragraph{}
-
-\textbf{\textit{figure 3}} \& \textbf{\textit{figure 4}} below show the number of open requests as well as the number of sent and received requests in comparison with the network traffic on both the virtual and physical setups:
- 
-
- \begin{figure}[H]
-    \centering
-    \includegraphics[width=10cm]{Pictures/graph6hw.png}
-    \caption{Requests \& Transferred Data for Physical Setup}
-    \label{fig:QQ3}
-\end{figure}
-   
- 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=10cm]{Pictures/graph6vm.png}
-    \caption{Requests \& Transferred Data for Virtual Setup}
-    \label{fig:QQ3}
-\end{figure} 
-
-
+Fully Qualified Domain Name (FQDN) of the servers used:
+$$ \begin{bmatrix}
+\begin{Bmatrix}app \mid web1 \mid web2 \mid db \end{Bmatrix} .  \begin{Bmatrix} vm \mid hw \end{Bmatrix} . os5 . nl . $$
+  \\ \vdots \\ db.hw.os5.nl.
+\end{bmatrix}$$
 \paragraph{}
-\textbf{ALEXANDER also write here small conclusion about these two graphs}
-
-
-\subsubsection{Measuring transferred Data \& system Memory \& CPU load}
+For the static web page:\\
+$$ \begin{bmatrix}
+ http://  \begin{Bmatrix}app \mid web1 \mid web2 \end{Bmatrix} .  \begin{Bmatrix} vm \mid hw \end{Bmatrix} . os5 . nl 
+  \\ \vdots \\ http://web1.hw.os5.nl
+\end{bmatrix}$$
 \paragraph{}
-
-\textbf{\textit{figure 5}} \& \textbf{\textit{figure 6}} describe the measurement for vital parameters of the machine it runs on. It can be helpful to find out if the limits of the test client have been reached testing both the virtual and physical setups:
- 
-
- \begin{figure}[H]
-    \centering
-    \includegraphics[width=10cm]{Pictures/ph1.png}
-    \caption{Transferred Data \& System Memory \& CPU Load for Physical Setup}
-    \label{fig:QQ3}
-\end{figure}
-   
- 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=10cm]{Pictures/vm1.png}
-    \caption{Transferred Data \& System Memory \& CPU Load for Virtual Setup}
-    \label{fig:QQ3}
-\end{figure} 
-
-
-\paragraph{}
-\textbf{ALEXANDER also write here small conclusion about these two graphs}
-
-
-
-\subsubsection{Measuring Click Time, Hits/s \& Clicks/s}
-\paragraph{}
-
-\textbf{\textit{figure 6}} \& \textbf{\textit{figure 7}} illustrate the average time a user waited for his request to be processed (including redirects, images, frames, etc., if enabled), the hits per second, and the users per clicks. 
-
- \begin{figure}[H]
-    \centering
-    \includegraphics[width=10cm]{Pictures/ph2.png}
-    \caption{Click Time, Hits/s \& Clicks/s for Physical Setup}
-    \label{fig:QQ3}
-\end{figure}
-   
- 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=10cm]{Pictures/vm2.png}
-    \caption{Click Time, Hits/s \& Clicks/s for Virtual Setup}
-    \label{fig:QQ3}
-\end{figure} 
-
-
-\paragraph{}
-We can see that with 500 users the two lines for “clicks per second” (blue) and “hits per second” (green) differ more and more. The reason is that hits includes requests that produce errors, but clicks are only calculated from the requests that were successful.
-
-
-
-
-\subsubsection{Apache Benchmark}
-
-NOTE: Below should be an image with the test 
-%%                  > WEB 1 \
-%%    AB to Proxy  <         > Database 
-%%                  > WEB 2 /
-
-NOTE: Below should be an image with the test 
-%%      AB to      > WEB 1 
+For the dynamic web page:\\
+$$ \begin{bmatrix}
+http://  \begin{Bmatrix}app \mid web1 \mid web2 \end{Bmatrix} .  \begin{Bmatrix} vm \mid hw \end{Bmatrix} . os5 . nl /  oscommerce / catalog / \begin{Bmatrix} php script \end{Bmatrix}   \\ \vdots \\
+http://  app .  vm . os5 . nl /  oscommerce / catalog / product\_info.php?products\_id=25   
+\end{bmatrix}$$
